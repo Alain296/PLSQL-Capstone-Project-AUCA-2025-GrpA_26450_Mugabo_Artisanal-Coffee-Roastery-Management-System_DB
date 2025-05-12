@@ -2,7 +2,7 @@
 
 ### ID: 26450
 
-####  🧮 Project Title: Artisanal Coffee Roastery Management System
+#  🧮 Project Title: Artisanal Coffee Roastery Management System
 
 ---
 
