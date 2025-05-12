@@ -27,3 +27,5 @@ The Artisanal Coffee Roastery Management System is a PL/SQL-based database solut
 
  # Phase 1: 🎯 Problem Statement.
 
+ ### 📠 What This Phase Covers
+
