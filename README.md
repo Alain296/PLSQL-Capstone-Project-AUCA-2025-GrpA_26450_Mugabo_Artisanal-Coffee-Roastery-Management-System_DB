@@ -25,3 +25,5 @@ PL/SQL is ideal for this project due to its seamless integration with Oracle dat
 
 The Artisanal Coffee Roastery Management System is a PL/SQL-based database solution that automates order processing, inventory tracking, and quality control for specialty coffee businesses. By leveraging stored procedures, triggers, and real-time analytics, it eliminates manual errors, prevents stockouts, and ensures consistent roasting quality. This system enhances operational efficiency and decision-making while maintaining the high standards of artisanal coffee production.
 
+ # Phase 1: 🎯 Problem Statement.
+
