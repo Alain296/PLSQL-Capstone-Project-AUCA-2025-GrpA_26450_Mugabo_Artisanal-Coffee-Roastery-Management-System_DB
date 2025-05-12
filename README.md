@@ -79,9 +79,9 @@ This process is central to Management Information Systems (MIS) as it integrates
 
 The following key entities are involved in the process:
 
-## - Customers: Initiate the process by placing orders. They interact with the system to view products, track their orders, and receive updates.
-## - Sales Team: Manages order entries, confirmations, and invoicing. Coordinates with inventory and roasting departments for fulfillment.
-## - Inventory Staff: Monitors and updates stock levels of coffee batches, including green and roasted beans. Alerts when restocking is needed.
-## - Roastery Managers: Oversee production schedules, ensure quality control, and manage supplier relationships and roasting standards.
-## - Suppliers: Provide raw coffee beans based on contractual agreements. Interact with the system for delivery tracking and inventory planning.
-## - MIS/Database System: Centralized platform that connects all departments. Automates order tracking, inventory updates, quality control logs, and reporting.
+## - Customers: Initiate the process by placing orders. They interact with the system to view products, track their orders, and receive updates.
+## - Sales Team: Manages order entries, confirmations, and invoicing. Coordinates with inventory and roasting departments for fulfillment.
+## - Inventory Staff: Monitors and updates stock levels of coffee batches, including green and roasted beans. Alerts when restocking is needed.
+## - Roastery Managers: Oversee production schedules, ensure quality control, and manage supplier relationships and roasting standards.
+## - Suppliers: Provide raw coffee beans based on contractual agreements. Interact with the system for delivery tracking and inventory planning.
+## - MIS/Database System: Centralized platform that connects all departments. Automates order tracking, inventory updates, quality control logs, and reporting.
