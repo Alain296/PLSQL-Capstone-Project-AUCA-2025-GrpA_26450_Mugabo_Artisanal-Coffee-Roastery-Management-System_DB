@@ -55,3 +55,5 @@ This initial phase establishes the foundation for the Artisanal Coffee Roastery 
 # Phase 2: 🛠 Business Process Modeling
 
 ### 📠 What This Phase Covers
+
+This phase models the coffee roastery's order-to-fulfillment process using BPMN/UML, mapping PL/SQL automation (triggers, procedures) to key workflows like inventory checks, roasting, and supplier alerts. It bridges Phase 1's database design with MIS principles, ensuring seamless data flow for operational efficiency.
