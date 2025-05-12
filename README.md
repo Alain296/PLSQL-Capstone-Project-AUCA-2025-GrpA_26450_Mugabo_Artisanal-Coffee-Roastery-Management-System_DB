@@ -29,25 +29,25 @@ The Artisanal Coffee Roastery Management System is a PL/SQL-based database solut
 
  ### 📠 What This Phase Covers
  
-## Problem Definition & System Scope:
+###🧠 Problem Definition & System Scope:
 
 - Identifies key operational challenges in the coffee roastery (inventory mismanagement, order delays, inconsistent quality)
 
 - Defines the system's purpose: automating processes using PL/SQL for suppliers, orders, inventory, and roasting logs
 
-## Core Database Structure:
+###🤳 Core Database Structure:
 
 - Outlines 5 main entities (Customers, Orders, Inventory, Suppliers, Roasting Logs) with primary attributes
 
 - Establishes foundational relationships between entities (e.g., Orders → Customers, Inventory → Roasting Logs)
 
-## User Roles & Requirements:
+###👩🏻‍🤝‍🧑🏿 User Roles & Requirements:
 
 - Specifies 4 user types (Managers, Inventory Staff, Sales Team, Customers)
 
 - Maps their interactions with the system (e.g., managers oversee suppliers, sales handle orders)
 
-## Project Goals
+##🏃‍♂️ Project Goals
 
 
 This initial phase establishes the foundation for the Artisanal Coffee Roastery Management System by defining key operational challenges (inventory mismanagement, order delays, inconsistent quality) and outlining the PL/SQL database solution. It identifies the five core entities (Customers, Orders, Inventory, Suppliers, Roasting Logs) with their attributes and relationships, while specifying four user roles and their system interactions. The project goals are clearly articulated: to automate order processing for efficiency, maintain accurate inventory levels of green and roasted beans, manage supplier relationships effectively, ensure consistent quality through roasting logs, and generate actionable business reports - all through a robust PL/SQL database system designed to optimize specialty coffee operations.
