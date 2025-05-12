@@ -57,3 +57,12 @@ This initial phase establishes the foundation for the Artisanal Coffee Roastery 
 ### 📠 What This Phase Covers
 
 This phase models the coffee roastery's order-to-fulfillment process using BPMN/UML, mapping PL/SQL automation (triggers, procedures) to key workflows like inventory checks, roasting, and supplier alerts. It bridges Phase 1's database design with MIS principles, ensuring seamless data flow for operational efficiency.
+
+###  🧰 Scope and Objectives
+
+The modeled process focuses on order processing and inventory management within an artisanal coffee roastery. This includes tracking incoming customer orders, managing available inventory (both green and roasted beans), and initiating roasting and fulfillment tasks as needed.
+
+### 📌 Key Entities and Their Roles
+
+### 🏛 Relevance to MIS:
+This process is central to Management Information Systems (MIS) as it integrates data from various departments—sales, inventory, production, and suppliers—into a coordinated system. MIS supports real-time decision-making, automates workflows, and ensures data consistency across the organization.
