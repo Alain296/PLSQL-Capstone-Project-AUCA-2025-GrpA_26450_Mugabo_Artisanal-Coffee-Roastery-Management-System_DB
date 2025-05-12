@@ -62,7 +62,26 @@ This phase models the coffee roastery's order-to-fulfillment process using BPMN/
 
 The modeled process focuses on order processing and inventory management within an artisanal coffee roastery. This includes tracking incoming customer orders, managing available inventory (both green and roasted beans), and initiating roasting and fulfillment tasks as needed.
 
-### 📌 Key Entities and Their Roles
 
 ### 🏛 Relevance to MIS:
+
 This process is central to Management Information Systems (MIS) as it integrates data from various departments—sales, inventory, production, and suppliers—into a coordinated system. MIS supports real-time decision-making, automates workflows, and ensures data consistency across the organization.
+
+###💎 Objectives and Expected Outcomes:
+
+- Automate and streamline the order processing system.
+- Provide real-time visibility into inventory levels of green and roasted coffee.
+- Maintain consistent quality by linking roasting logs with inventory.
+- Enable efficient coordination with suppliers.
+- Improve overall operational efficiency and customer satisfaction.
+
+ ### 📌 Key Entities and Their Roles
+
+The following key entities are involved in the process:
+
+## - Customers: Initiate the process by placing orders. They interact with the system to view products, track their orders, and receive updates.
+## - Sales Team: Manages order entries, confirmations, and invoicing. Coordinates with inventory and roasting departments for fulfillment.
+## - Inventory Staff: Monitors and updates stock levels of coffee batches, including green and roasted beans. Alerts when restocking is needed.
+## - Roastery Managers: Oversee production schedules, ensure quality control, and manage supplier relationships and roasting standards.
+## - Suppliers: Provide raw coffee beans based on contractual agreements. Interact with the system for delivery tracking and inventory planning.
+## - MIS/Database System: Centralized platform that connects all departments. Automates order tracking, inventory updates, quality control logs, and reporting.
