@@ -47,3 +47,6 @@ The Artisanal Coffee Roastery Management System is a PL/SQL-based database solut
 
 - Maps their interactions with the system (e.g., managers oversee suppliers, sales handle orders)
 
+# Phase 2: 🛠 Business Process Modeling
+
+### 📠 What This Phase Covers
