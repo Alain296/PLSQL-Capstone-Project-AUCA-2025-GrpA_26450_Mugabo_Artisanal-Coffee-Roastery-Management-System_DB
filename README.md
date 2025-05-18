@@ -116,3 +116,31 @@ roasting a new batch if stock is unavailable. Once ready, the order is shipped t
 
 ## 🎴 Diagram Explanation
 This Business Process Model and Notation (BPMN) diagram illustrates the initial steps of the order processing flow within the Artisanal Coffee Roastery Management System. It clearly delineates the responsibilities of different actors – the Customer, the Sales Team, the System/Database, and Production – through the use of swimlanes. The diagram visually outlines how a customer order initiates the process, the subsequent actions taken by the sales team and the system to check inventory, and the branching logic based on stock availability, leading either to order fulfillment or coffee batch roasting. This provides a clear and concise overview of the early stages of order handling within the roastery.
+
+# Phase 3: 🗂 Logical Model Design.
+
+### 📠 What This Phase Covers
+
+This phase focuses on designing a detailed and robust logical data model for the project. The goal is to create a structure that accurately represents entities, their attributes, and relationships while ensuring the design can handle real-world data scenarios.
+
+#### 📌 Entities and Attributes
+
+The logical data model includes the following key entities, attributes, and constraints:
+
+1.🧍‍♂️ **Customer**
+* **Attributes:** `Customer_id (PK)`  ,name,email,phone,address,city,postal_code,country,registration_date,last_order_date
+
+2.⏰ **Order**
+* **Attributes:** `order_id (PK)`,order date,status(status IN ('New', 'Processing', 'Shipped', 'Delivered'), 'Cancelled'),shipping address,shipping city,shipping postal code,shipping country,total amount,payment method,payment status
+- Linked to `customer_id  (FK)`
+
+3. 🚚 **Suppliers**
+* **Attributes:** `supplier_id (PK)`,name,contact person,email,phone,address,city,country,
+
+4. ☕ **COFFEE_INVENTORY** 
+**Attributes:** `coffee_id (PK)`,origin country ,region,variety,process method,harvest year,arrival date,initial quantity,current quantity,unit,cost per unit,quality score,notes
+- Linked to `supplier_id  (FK)`
+
+5. 🧾 **Roasting Logs**: 
+* **Attributes:** `log_id INTEGER (PK)`,timestamp,temperature,air flow,drum speed,notes
+- Linked to `batch_id  (FK)`
