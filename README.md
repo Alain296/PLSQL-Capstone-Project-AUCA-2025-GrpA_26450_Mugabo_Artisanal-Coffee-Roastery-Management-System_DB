@@ -108,6 +108,11 @@ By clearly mapping the process with swimlanes, it's easier to spot bottlenecks, 
 Swimlanes can aid in defining system requirements. For instance, the MIS/Database System swimlane shows the need for order storage, inventory updates, and reporting capabilities. 
 
 ### 🏮 Logical Flow
-The diagram visually outlines how a customer order initiates the process, the subsequent actions taken by the sales team and the system to check inventory, and the branching logic based on stock availability, leading either to order fulfillment or coffee batch roasting. This provides a clear and concise overview of the early stages of order handling within the roastery.
+The BPMN diagram illustrates the order processing and inventory workflow for an Artisanal Coffee Roastery. 
+It begins with the Customer placing an order,which flows through the Sales Team,System/Database and Production Team.Key steps include processing the order,checking inventory and either fulfilling it or 
+roasting a new batch if stock is unavailable. Once ready, the order is shipped to the customer.
 ## 📸 Artisanal Coffee Roastery Management System-BPMN Diagram
 ![BPMNDIAGRAM PIC](https://github.com/user-attachments/assets/1ffe630a-028a-4e39-9158-c9e4e1d390e3)
+
+## 🎴 Diagram Explanation
+This Business Process Model and Notation (BPMN) diagram illustrates the initial steps of the order processing flow within the Artisanal Coffee Roastery Management System. It clearly delineates the responsibilities of different actors – the Customer, the Sales Team, the System/Database, and Production – through the use of swimlanes. The diagram visually outlines how a customer order initiates the process, the subsequent actions taken by the sales team and the system to check inventory, and the branching logic based on stock availability, leading either to order fulfillment or coffee batch roasting. This provides a clear and concise overview of the early stages of order handling within the roastery.
