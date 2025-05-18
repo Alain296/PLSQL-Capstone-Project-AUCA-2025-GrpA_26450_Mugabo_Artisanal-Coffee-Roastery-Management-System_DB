@@ -92,3 +92,17 @@ Oversee production schedules, ensure quality control, and manage supplier relati
 Provide raw coffee beans based on contractual agreements. Interact with the system for delivery tracking and inventory planning.
 ### 🎇MIS/Database System: 
 Centralized platform that connects all departments. Automates order tracking, inventory updates, quality control logs, and reporting.
+
+# 📉 Benefits of Using Swimlanes in This Context
+
+### 🤹‍♂️Clarity of Responsibility 
+It becomes immediately clear who is responsible for each action in the order process. For example, you can see that the Sales Team confirms the order, not the Inventory Staff.
+
+### 🧏‍♂️Identification of Handoffs
+Swimlanes highlight the points where information or tasks are passed between actors. The handoff from the Sales Team to the Inventory Staff for checking stock is visually obvious.
+
+### 🚴‍♂️Process Improvement 
+By clearly mapping the process with swimlanes, it's easier to spot bottlenecks, redundancies, or areas where automation could be beneficial. You might notice delays in communication between departments.
+
+### 📝System Requirements 
+Swimlanes can aid in defining system requirements. For instance, the MIS/Database System swimlane shows the need for order storage, inventory updates, and reporting capabilities. 
