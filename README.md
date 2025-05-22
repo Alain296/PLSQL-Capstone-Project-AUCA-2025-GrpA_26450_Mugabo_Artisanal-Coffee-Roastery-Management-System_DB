@@ -144,3 +144,14 @@ The logical data model includes the following key entities, attributes, and cons
 5.🧾 **Roasting Logs**: 
 * **Attributes:** `log_id INTEGER (PK)`,timestamp,temperature,air flow,drum speed,notes
 - Linked to `batch_id  (FK)`
+
+### 🚦 Relationships and Cardinalities
+
+#### 🚧 Ensure cardinalities are correct:
+
+#### CUSTOMERS (1) — (M) ORDERS:
+* A customer can place multiple orders.
+#### SUPPLIERS (1) - (M) COFFEE_INVENTORY: 
+* A supplier can provide multiple types of coffee for inventory.
+#### COFFEE_INVENTORY (1) to (M) PRODUCTS: 
+* One coffee type (from inventory) can be used for multiple different finished products
