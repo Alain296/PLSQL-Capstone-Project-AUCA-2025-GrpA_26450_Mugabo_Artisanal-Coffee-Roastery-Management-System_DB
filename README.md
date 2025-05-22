@@ -191,6 +191,13 @@ The logical data model includes the following key entities, attributes, and cons
 #### ✅ Handled by Model
 * The Supplier table contains contract_start, coffee_origin, and connects to Inventory.
 
+## 📸 Artisanal Coffee Roastery Management System - Entity Relationship Diagram (ERD)
+
+The ER diagram visualizes the entities, their attributes, and relationships with clear cardinalities,
+primary keys, foreign keys, and constraints.
+
+
+
 
   
   
