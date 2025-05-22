@@ -196,6 +196,9 @@ The logical data model includes the following key entities, attributes, and cons
 The ER diagram visualizes the entities, their attributes, and relationships with clear cardinalities,
 primary keys, foreign keys, and constraints.
 
+![Scrn](https://github.com/user-attachments/assets/2518c19b-4f54-4991-9c51-2135d93a6edf)
+
+
 
 
 
