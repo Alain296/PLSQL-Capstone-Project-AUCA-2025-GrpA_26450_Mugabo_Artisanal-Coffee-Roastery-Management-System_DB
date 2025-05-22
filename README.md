@@ -155,3 +155,5 @@ The logical data model includes the following key entities, attributes, and cons
 * A supplier can provide multiple types of coffee for inventory.
 #### COFFEE_INVENTORY (1) to (M) PRODUCTS: 
 * One coffee type (from inventory) can be used for multiple different finished products
+#### PRODUCTS (1) to (M) ORDERS:
+* A product can appear in multiple order items.
