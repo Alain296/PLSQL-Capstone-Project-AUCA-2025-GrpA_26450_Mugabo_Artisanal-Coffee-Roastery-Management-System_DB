@@ -134,13 +134,13 @@ The logical data model includes the following key entities, attributes, and cons
 * **Attributes:** `order_id (PK)`,order date,status(status IN ('New', 'Processing', 'Shipped', 'Delivered'), 'Cancelled'),shipping address,shipping city,shipping postal code,shipping country,total amount,payment method,payment status
 - Linked to `customer_id  (FK)`
 
-3. 🚚 **Suppliers**
+3.🚚 **Suppliers**
 * **Attributes:** `supplier_id (PK)`,name,contact person,email,phone,address,city,country,
 
-4. ☕ **COFFEE_INVENTORY** 
+4.☕ **COFFEE_INVENTORY** 
 **Attributes:** `coffee_id (PK)`,origin country ,region,variety,process method,harvest year,arrival date,initial quantity,current quantity,unit,cost per unit,quality score,notes
 - Linked to `supplier_id  (FK)`
 
-5. 🧾 **Roasting Logs**: 
+5.🧾 **Roasting Logs**: 
 * **Attributes:** `log_id INTEGER (PK)`,timestamp,temperature,air flow,drum speed,notes
 - Linked to `batch_id  (FK)`
