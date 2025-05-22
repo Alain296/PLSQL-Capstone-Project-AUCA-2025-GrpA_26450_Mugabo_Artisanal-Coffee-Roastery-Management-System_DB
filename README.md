@@ -198,6 +198,18 @@ primary keys, foreign keys, and constraints.
 
 ![sv](https://github.com/user-attachments/assets/c863786b-1dd5-40ec-9cbe-fe340a06d2f9)
 
+## 🎡 MIS Role:
+
+### This logical model supports the MIS framework by:
+*This logical data model supports the MIS framework by enabling structured data collection across customers, orders, inventory, suppliers, and roasting logs. It ensures data integrity and consistency, essential for accurate reporting. The model allows efficient data processing to generate insights like sales trends and inventory levels. It supports decision-making through traceable, quality-driven, and real-time information. Overall, it enhances operational efficiency and provides a strong foundation for management-level analytics.
+
+
+
+
+
+
+
+
 
 
 
