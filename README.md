@@ -161,3 +161,38 @@ The logical data model includes the following key entities, attributes, and cons
 * One coffee type (from inventory) can be used for multiple different finished products
 #### PRODUCTS (1) to (M) ORDERS:
 * A product can appear in multiple order items.
+---
+## ⚙️ Handling Data Scenarios
+
+**The model is designed to handle:**
+#### 🔍 1. Multiple Orders from a Single Customer
+* A regular customer places multiple orders over time.
+#### ✅ Handled by Model:
+* The Customer table links to the Order table via customer_id (FK), supporting one-to-many relationships.
+
+#### 🔍 2. Each Order Contains Multiple Products
+* A customer buys different coffee products in one order.
+#### ✅ Handled by Model:
+* The many-to-many relationship between Order and Product should be implemented using a join table (e.g., OrderDetails) that captures order_id, product_id, and quantity.
+
+#### 🔍 3. Product Inventory Management
+* Track availability of roasted beans, packaging sizes, and stock levels.
+#### ✅ Handled by Model
+* Product contains available_quantity and is linked to Inventory via coffee_type and roast_level.
+* 🔁 Improvement Tip: Consider connecting Inventory to Product via product_id or ensure consistent coffee identifiers for clarity.
+
+#### 🔍 4. Roasting Quality Control
+* A batch of coffee is roasted, and its quality is evaluated.
+#### ✅ Handled by Model
+* Roasting_Log captures roast_date, temperature, and quality_score, and is tied to Inventory via batch_id.
+
+#### 🔍 5. Supplier Contract Management
+* The system tracks which supplier provided which beans and when the contract started.
+#### ✅ Handled by Model
+* The Supplier table contains contract_start, coffee_origin, and connects to Inventory.
+
+
+  
+  
+
+
