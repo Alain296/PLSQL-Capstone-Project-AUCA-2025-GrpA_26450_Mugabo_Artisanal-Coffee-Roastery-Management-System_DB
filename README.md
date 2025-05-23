@@ -290,4 +290,116 @@ Grant succeeded.
 
 *  **Purpose:** To assigns full privileges for database operations.
   
+### ⚖️ Oracle Enterprise Manager (OEM)
 
+The **OEM** interface confirmed:
+
+* Successful creation of the database.
+* Proper implementation of relationships between tables.
+
+## 📸 ORACLE ENTERPRISE MANAGER confirm successful database creation and table relationships.
+
+![OEM SCREENSHOOT](https://github.com/user-attachments/assets/9f31b98b-642f-4305-b11e-437084fa6d99)
+
+![OEM SCREENSHOT1](https://github.com/user-attachments/assets/a1813922-05ec-40ec-bc86-a45b8d1ad3ad)
+
+### 🔭 Conclusion About this phase 
+
+This phase successfully established the pluggable database and implemented the physical structure, enabling efficient data management for the  Artisanal Coffee Roastery Management System.
+
+
+---
+
+#  Phase 5: 📊Table Implementation and Data Insertion
+
+
+### 📠 What This Phase Covers
+
+* **Table Creation:** Implementing the logical design by creating tables within the Oracle database.
+* **Data Insertion:** Adding realistic and meaningful data for testing and demonstration.
+* **Data Integrity:** Ensuring data integrity and validating that all data supports necessary queries and operations outlined in the problem statement.
+
+ ### ♻️ Logical Design Implementation
+ 
+The logical design was implemented by creating database tables aligned with the previously developed ER diagram. Relationships between entities were maintained using primary and foreign keys.
+
+#### Example table creation:
+```sql
+CREATE TABLE CUSTOMERS (
+  customer_id INTEGER PRIMARY KEY,
+  name VARCHAR2(100) NOT NULL,
+  email VARCHAR2(100) NOT NULL,
+  phone VARCHAR2(20),
+  address VARCHAR2(200),
+  city VARCHAR2(50),
+  postal_code VARCHAR2(20),
+  country VARCHAR2(50),
+  registration_date DATE DEFAULT SYSDATE,
+  last_order_date DATE
+);
+```
+* **Other tables such as `Supplier`,`COFFEE_INVENTORY ` ,`PRODUCTS`, and `ORDERS` were created similarly with appropriate constraints and relationships using foreign keys. The complete scripts for these tables are provided in the uploaded files.**
+
+## 🔬 Data Insertion
+
+Realistic data was inserted to support project testing and demonstration.
+
+
+**Example:** Adding a new customer.
+```sql
+INSERT INTO CUSTOMERS VALUES (
+  301, 'Jean Uwase', 'jean.uwase@example.com', '+250788112233',
+  'KN 5 Ave', 'Kigali', '0001', 'Rwanda', SYSDATE
+);
+```
+* **Similar insertions were performed for related tables, and all data scripts are included in the uploaded files.**
+
+### 🔱 To ensure data integrity:
+
+* Primary keys and foreign keys were implemented to maintain relationships.
+* Validation was performed by running queries to verify data consistency and relationships.
+
+### Example Query for Verification:
+
+```sql
+SELECT 
+    o.order_id,
+    c.name AS customer_name,
+    c.email AS customer_email,
+    o.order_date,
+    o.status,
+    o.total_amount
+FROM ORDERS o
+JOIN CUSTOMERS c ON o.customer_id = c.customer_id;
+
+```
+### 🗃️ Output:
+* Reports and data validation for:
+  
+* **1.Pending Payments – identifies orders with unpaid balances.
+
+* **2.High-Value Orders – shows orders above $20.
+
+* **3.Comprehensive Overview – simulates a full outer join for a broader view of orders and customers..
+   
+  
+* **The database operations fully support the problem statement's requirements.**
+
+#### Example Data Insertion:
+
+```sql
+-- Insert order
+INSERT INTO ORDERS VALUES (
+  401, 301, SYSDATE, 'New', 'KN 5 Ave', 'Kigali', '0001', 'Rwanda',
+  21.98, 'Credit Card', 'Pending', 'First purchase from Jean Uwase'
+);
+
+
+
+```
+
+* This phase ensures the logical structure is realized effectively, supporting system functionality and data accuracy.
+  
+---
+
+#  Phase 6: 🔄Database Interaction and Transactions
