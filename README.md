@@ -203,19 +203,91 @@ primary keys, foreign keys, and constraints.
 ### This logical model supports the MIS framework by:
 *This logical data model supports the MIS framework by enabling structured data collection across customers, orders, inventory, suppliers, and roasting logs. It ensures data integrity and consistency, essential for accurate reporting. The model allows efficient data processing to generate insights like sales trends and inventory levels. It supports decision-making through traceable, quality-driven, and real-time information. Overall, it enhances operational efficiency and provides a strong foundation for management-level analytics.
 
+#  Phase 4: 💾Pluggable Database Creation and Naming
 
+### 📠 What This Phase Covers
+This phase focuses on creating a Pluggable Database **(PDB)** and converting the logical model into a physical database structure. It ensures that all tables, relationships, and constraints are implemented to meet project requirements.
 
+### 🔨Database Creation
 
+The Pluggable Database (PDB) was created using the following naming format:
 
+```sql
+Database Name: GRPA_26450_ALAIN_ARTISANAL_COFFEE_ROASTERY_MANAGEMENT_SYSTEM_DB
+Username: SYS
+Password: Mugabo77
+```
 
+### Steps Executed in SQL Command Prompt
 
+**1.Create a pluggable database:**
 
+```sql
 
+create pluggable database tue_falcon_healthandFitnesstrackingSystem
+  2  admin user  GRPA_26450_ALAIN_ARTISANAL_COFFEE_ROASTERY_MANAGEMENT_SYSTEM_DB identified by ALAIN
+  3 FILE_NAME_CONVERT = ('C:\ORACLE21C\ORADATA\ORCL\PDBSEED\','C:\ORACLE21C\ORADATA\ORCL\GRPA_26450_ALAIN_ARTISANAL_COFFEE_ROASTERY_MANAGEMENT_SYSTEM_DB\'
+  );
 
+ Pluggable database created.
+```
 
+**2.Open the newly created PDB:**
 
+```sql
 
+ alter pluggable database  GRPA_26450_ALAIN_ARTISANAL_COFFEE_ROASTERY_MANAGEMENT_SYSTEM_DB open;  
   
-  
+ Pluggable database altered.
 
+```
+
+* **Purpose:** Makes the PDB active and ready for operations.
+
+
+#### 3.save the newly created PDB.
+
+
+```sql
+SQL> alter pluggable database GRPA_26450_ALAIN_ARTISANAL_COFFEE_ROASTERY_MANAGEMENT_SYSTEM_DB save state;
+
+Pluggable database altered.
+```
+
+* **Purpose:** Ensures the PDB remains open after the database restarts.
+
+
+#### 4. Set the Session Container
+
+```sql
+SQL> alter session set container =GRPA_26450_ALAIN_ARTISANAL_COFFEE_ROASTERY_MANAGEMENT_SYSTEM_DB;
+
+Session altered.
+```
+
+* **Purpose:** Switches the session to the newly created PDB for subsequent operations.
+
+
+### 5.User Creation and Privilege Assignment
+
+#### Create a Database User
+
+```sql
+SQL> create user ALAIN identified by ALAIN;
+
+User created.
+```
+
+* **Purpose:** Creates a new user, tue_falcon, with the password falcon.
+
+#### Grant Basic Privileges
+
+```sql
+ SQL> grant all privileges to ALAIN;
+
+Grant succeeded.
+```
+
+*  **Purpose:** To assigns full privileges for database operations.
+  
 
