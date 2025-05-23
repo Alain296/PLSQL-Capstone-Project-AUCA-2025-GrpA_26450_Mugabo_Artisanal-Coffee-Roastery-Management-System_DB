@@ -403,3 +403,89 @@ INSERT INTO ORDERS VALUES (
 ---
 
 #  Phase 6: 🔄Database Interaction and Transactions
+
+### 📠 What This Phase Covers
+
+This phase focuses on performing Database Operations (both **DML and DDL**), utilizing various join types to interact with the database and ensure reliable data management. Additionally, it covers Transaction Management to maintain data consistency and integrity during multi-step operations. This ensures the system remains consistent and accurate when processing multiple transactions.
+
+## :electron: A. Database Operations
+
+* Various join types (cross joins, inner joins, outer joins, etc.) are used to manipulate and query data effectively.
+
+* Transactions ensure that multiple database operations are executed consistently, maintaining the integrity of the system.
+
+
+### 🛡️ 1.Inner Join:
+
+ An inner join fetches records that exist in both tables based on a shared key.
+ 
+```sql
+SELECT 
+  c.customer_name, 
+  o.order_date, 
+  o.order_status
+FROM 
+  CUSTOMERS c
+INNER JOIN 
+  ORDERS o ON c.customer_id = o.customer_id;
+
+
+```
+
+#### 🔍 Explanation:
+* .This query retrieves customer names along with the date and status of their orders.
+
+* .It ensures only customers who have placed orders are included in the result.
+
+* .It's ideal for tracking customer activity and order history.
+
+### 🎛️ 2.Outer Join (Left Join)
+
+#### ✅ Goal:
+* .You want to list all customers, including those who have not placed any orders, to identify inactive customers or prompt follow-up.
+A left outer join retrieves all records from the left table (Customer) and only the matching records from the right table (Order). If no match is found, NULL is returned.
+
+```sql
+SELECT 
+  c.customer_name, 
+  o.order_date
+FROM 
+  CUSTOMERS c
+LEFT OUTER JOIN 
+  ORDERS o ON c.customer_id = o.customer_id;
+
+
+```
+
+#### 📝 Explanation:
+* .CUSTOMERS is the left table — we want to include all customers.
+* .ORDERS is the right table — we include matching orders if they exist.
+* .If a customer has never placed an order, their order_date will show as NULL.
+
+### ❄️ 3.Cross Join:
+
+* .Suppose you want to evaluate all possible combinations of customers and available coffee products — maybe to plan promotional offers or theoretical pairings.
+A cross join produces a Cartesian product of two tables, combining each row of the first table with every row of the second.
+
+```sql
+SELECT 
+  c.customer_name, 
+  p.product_name
+FROM 
+  CUSTOMERS c
+CROSS JOIN 
+  PRODUCTS p;
+
+```
+
+#### 📝 Explanation:
+* . This query lists every possible pairing between customers and products.
+
+* . It could support:
+
+   * . Promotional planning (e.g., who might receive a discount for which product),
+
+   * . Market analysis (e.g., matching new products with segments of your customer base),
+
+   * . Menu personalization ideas.
+
