@@ -260,7 +260,7 @@ Pluggable database altered.
 #### 4. Set the Session Container
 
 ```sql
-SQL> alter session set container =GRPA_26450_ALAIN_ARTISANAL_COFFEE_ROASTERY_MANAGEMENT_SYSTEM_DB;
+SQL> alter session set container = GRPA_26450_ALAIN_ARTISANAL_COFFEE_ROASTERY_MANAGEMENT_SYSTEM_DB;
 
 Session altered.
 ```
