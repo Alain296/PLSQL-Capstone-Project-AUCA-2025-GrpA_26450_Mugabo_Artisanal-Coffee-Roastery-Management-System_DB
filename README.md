@@ -433,16 +433,16 @@ INNER JOIN
 ```
 
 #### 🔍 Explanation:
-* .This query retrieves customer names along with the date and status of their orders.
+* This query retrieves customer names along with the date and status of their orders.
 
-* .It ensures only customers who have placed orders are included in the result.
+* It ensures only customers who have placed orders are included in the result.
 
-* .It's ideal for tracking customer activity and order history.
+* It's ideal for tracking customer activity and order history.
 
 ### 🎛️ 2.Outer Join (Left Join)
 
 #### ✅ Goal:
-* .You want to list all customers, including those who have not placed any orders, to identify inactive customers or prompt follow-up.
+* You want to list all customers, including those who have not placed any orders, to identify inactive customers or prompt follow-up.
 A left outer join retrieves all records from the left table (Customer) and only the matching records from the right table (Order). If no match is found, NULL is returned.
 
 ```sql
@@ -458,13 +458,13 @@ LEFT OUTER JOIN
 ```
 
 #### 📝 Explanation:
-* .CUSTOMERS is the left table — we want to include all customers.
-* .ORDERS is the right table — we include matching orders if they exist.
-* .If a customer has never placed an order, their order_date will show as NULL.
+* CUSTOMERS is the left table — we want to include all customers.
+* ORDERS is the right table — we include matching orders if they exist.
+* If a customer has never placed an order, their order_date will show as NULL.
 
 ### ❄️ 3.Cross Join:
 
-* .Suppose you want to evaluate all possible combinations of customers and available coffee products — maybe to plan promotional offers or theoretical pairings.
+* Suppose you want to evaluate all possible combinations of customers and available coffee products — maybe to plan promotional offers or theoretical pairings.
 A cross join produces a Cartesian product of two tables, combining each row of the first table with every row of the second.
 
 ```sql
@@ -479,13 +479,210 @@ CROSS JOIN
 ```
 
 #### 📝 Explanation:
-* . This query lists every possible pairing between customers and products.
+* This query lists every possible pairing between customers and products.
 
-* . It could support:
+* It could support:
 
-   * . Promotional planning (e.g., who might receive a discount for which product),
+   * Promotional planning (e.g., who might receive a discount for which product),
 
-   * . Market analysis (e.g., matching new products with segments of your customer base),
+   * Market analysis (e.g., matching new products with segments of your customer base),
 
-   * . Menu personalization ideas.
+   * Menu personalization ideas.
 
+
+## ⚓B.Queries and Validation
+
+Once the operations are in place, validation is critical to ensure data integrity and the correct functionality of the system.
+
+### Objective: 
+
+Validate system functionality by running critical queries.
+
+### Queries:
+
+### 🕹️  1.High-Intensity Fitness Plans:
+
+Assuming your PRODUCTS table has a column like ROAST_INTENSITY or similar, here’s how you'd list high-intensity coffee products (e.g., dark roasts or extra-strong blends):
+
+```sql
+SELECT * 
+FROM PRODUCTS 
+WHERE ROAST_INTENSITY = 'High';
+
+
+```
+#### 📝 Explanation:
+Retrieves all coffee products with a “High” roast intensity.
+
+Useful for:
+
+ * Customizing offerings to customers who prefer bold flavors.
+
+ * Inventory planning for high-demand or niche roast profiles.
+
+ * Marketing campaigns for strong blends.
+
+### 📟 2.Client-Staff Appointment Details:
+
+Combines data from the ORDER, CUSTOMER, and Staff tables to provide a detailed view of appointments.
+
+```sql
+
+SELECT 
+  o.order_id,
+  c.customer_name AS Customer_Name,
+  s.staff_name AS Staff_Name,
+  o.order_date,
+  o.order_status,
+  o.delivery_type
+FROM 
+  ORDERS o
+INNER JOIN 
+  CUSTOMERS c ON o.customer_id = c.customer_id
+INNER JOIN 
+  STAFF s ON o.staff_id = s.staff_id;
+
+
+```
+
+#### 📝 Explanation:
+Shows detailed order records with associated customer and staff info.
+
+* Useful for:
+
+   * Monitoring service delivery.
+
+   * Checking staff performance or assignments.
+
+   * Understanding customer interactions.
+
+
+### 📼 3.Validation of Unique Data:
+Checks for duplicate client records by comparing Customer_Name and Contact_Info.
+
+```sql
+SELECT 
+    C1.Customer_ID AS Customer1_ID, 
+    C2.Customer_ID AS Customer2_ID, 
+    C1.Customer_Name, 
+    C1.Contact_Info
+FROM CUSTOMERS C1
+INNER JOIN CUSTOMERS C2 
+    ON C1.Customer_Name = C2.Customer_Name 
+    AND C1.Contact_Info = C2.Contact_Info 
+    AND C1.Customer_ID != C2.Customer_ID;
+
+```
+* Ensures that customer are not duplicated in the database, maintaining data integrity.
+* Detects duplicated customer records where both name and contact info are identical but have different IDs.
+* Helps maintain data integrity in your CUSTOMERS table for the Artisanal Coffee Roastery Management System.
+
+### 🏷️ 5.Full Join on Clients and Appointments:
+
+Retrieves all customers (even those who haven’t placed an order) and all orders (even those not yet linked to a customer).
+```sql
+
+SELECT 
+    C.Customer_Name AS Customer_Name, 
+    O.Order_ID
+FROM CUSTOMERS C
+FULL OUTER JOIN ORDERS O ON C.Customer_ID = O.Customer_ID;
+
+
+```
+* Helps identify clients without appointments and appointments without clients, ensuring comprehensive data tracking.
+
+#### ✅ Purpose:
+   * Identifies customers without any orders (e.g., newly registered users).
+
+   * Highlights orders without assigned customers (e.g., potential data entry issues).
+
+   * Supports comprehensive tracking for better business insights.
+
+
+## C. 🏧 Transaction Management
+
+This phase also introduces transaction management to ensure the system maintains consistency when multiple actions are performed together. If any operation fails, all previous actions in the transaction are rolled back.
+
+**Example of Transaction Block:**
+
+```SQL
+BEBEGIN
+  -- Place a new order
+  INSERT INTO ORDERS (Order_ID, Customer_ID, Order_Date, Total_Amount)
+  VALUES (301, 1001, SYSDATE, 5000);
+
+  -- Update inventory (reduce stock)
+  UPDATE ROASTERY_COFFEE_INVENTORY
+  SET Quantity_Available = Quantity_Available - 5
+  WHERE Product_ID = 201;
+
+  -- Record payment
+  INSERT INTO PAYMENTS (Payment_ID, Order_ID, Payment_Date, Payment_Amount, Payment_Status)
+  VALUES (901, 301, SYSDATE, 5000, 'Completed');
+
+  -- If all succeeds
+  COMMIT;
+
+```
+
+#### ✅ Purpose:
+ * Ensures atomicity: all operations succeed or none do.
+ * Maintains inventory accuracy and payment integrity.
+ * Helps prevent partial updates that could corrupt business records.
+
+
+##  Phase 7: 🔐Advanced Database Programming and Auditing
+
+### 📠 What This Phase Cover
+This phase focuses on enhancing the functionality of the Artisanal Coffee Roastery Management System by incorporating advanced database programming techniques. The key objectives include the practical application of PL/SQL concepts to solve specific problems in the project, ensuring robust system behavior, and improving security measures through auditing and tracking.
+
+### a) Problem Statement Development
+Artisanal Coffee Roastery Management System for a Wellness Center requires a robust method of managing sensitive customers data, maintaining business rule consistency, and automating processes within the system. Advanced database programming techniques like triggers, cursors, functions, packages, and auditing mechanisms are necessary to ensure the integrity of the system, automate repetitive tasks, track changes to sensitive data, and improve user accountability.
+
+**Triggers:**
+
+* Automate tasks like validating member age, enforcing unique constraints, or logging actions.
+* Maintain data integrity by ensuring rules are followed automatically before or after updates.
+
+**Cursors:**
+
+* Handle scenarios such as processing inactive users or batch updates to membership statuses row by row.
+* Ensure sequential handling of data, which is critical for certain workflows.
+  
+**Functions & Attributes:**
+ 
+* Encapsulate calculations (e.g., BMI computation) to ensure reusability and consistency.
+* Use `%TYPE` and `%ROWTYPE` for flexible and efficient coding tied directly to table structures.
+  
+**Packages:**
+
+* Organize related operations (e.g., membership registration, renewal) into a cohesive module.
+* Enhance scalability, security, and code clarity by centralizing related procedures.
+
+**Auditing & Restrictions:**
+
+* Implement tracking for sensitive data changes and user actions, ensuring accountability.
+* Restrict access based on roles, adding a layer of security to the system.
+
+ ###  b) Trigger Implementation
+#### i. Simple Trigger (Before Insert):
+A trigger can be used to ensure data consistency by checking if certain conditions are met before inserting data into the database.
+```sql
+CREATE OR REPLACE TRIGGER trg_validate_customer_insert
+BEFORE INSERT ON CUSTOMERS
+FOR EACH ROW
+BEGIN
+    IF :NEW.Contact_Info IS NULL THEN
+        RAISE_APPLICATION_ERROR(-20010, 'Contact information is required for every customer.');
+    END IF;
+END;
+/
+
+```
+#### ✅ Purpose:
+* Prevents inserting customer records without contact information.
+* Ensures essential customer data integrity.
+
+☕🤝 Conclusion:
+The Artisanal Coffee Roastery Management System is a robust and scalable solution designed to streamline the end-to-end operations of a specialty coffee business. It integrates customer management, order processing, inventory control, product traceability, and payment handling, all within a secure and auditable environment.Using BPMN diagrams, ER models, and Oracle tools, it ensures efficiency, data integrity, and real-time decision-making. This scalable system enhances customer satisfaction and resource management.
