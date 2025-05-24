@@ -684,5 +684,6 @@ END;
 * Prevents inserting customer records without contact information.
 * Ensures essential customer data integrity.
 
-☕🤝 Conclusion:
+## ☕🤝 Conclusion:
+
 The Artisanal Coffee Roastery Management System is a robust and scalable solution designed to streamline the end-to-end operations of a specialty coffee business. It integrates customer management, order processing, inventory control, product traceability, and payment handling, all within a secure and auditable environment.Using BPMN diagrams, ER models, and Oracle tools, it ensures efficiency, data integrity, and real-time decision-making. This scalable system enhances customer satisfaction and resource management.
